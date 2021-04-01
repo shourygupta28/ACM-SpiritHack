@@ -1,0 +1,310 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block head %}
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <script src="https://kit.fontawesome.com/6badb27c5a.js" crossorigin="anonymous"></script>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <title>Store My Goods</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/services/smg-favicon-removebg-preview.png" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;Raleway:300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- owl-carousel -->
+    <link rel="stylesheet" href="css/owl-carousel/owl.carousel.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup/magnific-popup.css" />
+    <!-- media element player -->
+    <link href="css/mediaelementplayer.min.css" rel="stylesheet" type="text/css" />
+    <!-- Animate -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- custom style -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <!-- Style customizer (Remove these two lines please) -->
+    <link rel="stylesheet" href="javascript:void(0)" data-style="styles">
+    <link rel="stylesheet" href="css/style-customizer.css" />
+
+
+    <style>
+        .feature_area {
+            padding-top: 70px;
+        }
+
+        .feature_item {
+            text-align: center;
+            padding: 40px 0px 60px 0px;
+            -webkit-transition: all 400ms linear 0s;
+            -o-transition: all 400ms linear 0s;
+            transition: all 400ms linear 0s;
+        }
+
+        .feature_item .f_icon {
+            min-height: 91px;
+            position: relative;
+        }
+
+        .feature_item .f_icon img {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        .feature_item h4 {
+            color: #0b1033;
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 45px 0px 20px 0px;
+        }
+
+        .feature_item p {
+            font-size: 15px;
+            line-height: 28px;
+            font-family: "Roboto", sans-serif;
+            color: #7c8d93;
+            font-weight: 500;
+            max-width: 290px;
+            margin: auto;
+            padding-bottom: 60px;
+        }
+
+        .feature_item .more_btn {
+            opacity: 0;
+        }
+
+        .feature_item {
+            -webkit-box-shadow: 0px 14px 38px 0px rgba(0, 0, 0, 0.11);
+            box-shadow: 0px 14px 38px 0px rgba(0, 0, 0, 0.11);
+            border-radius: 2%;
+        }
+
+        .feature_item:hover .more_btn {
+            opacity: 1;
+        }
+
+        .service_feature {
+            border-bottom: 1px solid #bbbec1;
+            padding-top: 100px;
+            overflow: hidden;
+        }
+
+        .service_feature .feature_inner {
+            margin-bottom: -50px;
+        }
+
+        .service_feature .feature_inner .feature_item {
+            margin-bottom: 50px;
+        }
+
+        .service_feature .feature_inner .feature_item .more_btn {
+            opacity: 1;
+            background: transparent;
+            border-color: transparent;
+            background-image: -webkit-gradient(linear, left top, right top, from(#a70000), color-stop(51%, #eb1f0d), to(#a70000));
+            background-image: -webkit-linear-gradient(left, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            background-image: -o-linear-gradient(left, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            background-image: linear-gradient(to right, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-transition: all 400ms linear 0s;
+            -o-transition: all 400ms linear 0s;
+            transition: all 400ms linear 0s;
+            background-size: 200% auto;
+        }
+
+        .service_feature .feature_inner .feature_item .more_btn {
+            color: #fff;
+            background-image: -webkit-gradient(linear, left top, right top, from(#a70000), color-stop(51%, #eb1f0d), to(#a70000));
+            background-image: -webkit-linear-gradient(left, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            background-image: -o-linear-gradient(left, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            background-image: linear-gradient(to right, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            border-color: rgba(204, 241, 255, 0.5);
+            background-clip: inherit;
+        }
+
+
+        .c_title {
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        .c_title img {
+            padding-bottom: 30px;
+        }
+
+        .c_title h6 {
+            font-size: 14px;
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #7c8d93;
+            padding-bottom: 10px;
+        }
+
+        .c_title h2 {
+            font-size: 48px;
+            color: #0b1033;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+        }
+
+
+
+        .more_btn {
+            padding: 0 15px;
+            background-image: -webkit-gradient(linear, left top, right top, from(#a70000), color-stop(51%, #eb1f0d), to(#a70000));
+            background-image: -webkit-linear-gradient(left, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            background-image: -o-linear-gradient(left, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            background-image: linear-gradient(to right, #a70000 0%, #eb1f0d 51%, #a70000 100%);
+            background-size: 200% auto;
+            z-index: 2;
+            display: inline-block;
+            -webkit-transition: all 400ms ease-out;
+            -o-transition: all 400ms ease-out;
+            transition: all 400ms ease-out;
+            text-align: center;
+            color: #fff;
+            font-size: 15px;
+            font-weight: bolder;
+            font-family: "Roboto", sans-serif;
+            line-height: 55px;
+            border: 6px solid rgba(204, 241, 255, 0.5);
+            border-radius: 33px;
+        }
+
+        .more_btn:hover {
+            background-position: right center;
+            color: #fff;
+        }
+
+
+
+        .img-fluid-center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+    </style>
+{% endblock head %}
+{% block body %}
+<section id="storables" class="overview-block-ptb grey-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title">
+                  <h1 class="title iq-tw-7" style="margin-top: 50px; margin-bottom: 70px; text-align: center;"><b>Purchased Coupons</b></h1>
+                  <p></p>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+
+		{% for coupon in coupons %}
+      <div class="col-sm-4 col-lg-4 col-md-4 r-mt-30">
+        <div class="iq-fancy-box text-center">
+            <!-- <div class="iq-icon" style="width: 180px; height: 180px;">
+                <img src="images/services/st1.png" class="img-fluid" alt="#">
+            </div> -->
+            <div class="fancy-content">
+                <h5 class="iq-tw-6 iq-pt-20 iq-pb-10"><b>{{ coupon.coupon.company.name }}</b></h5><br><br>
+                <p>{{ coupon.coupon.description }}</p>
+                <p>{{ coupon.unique_code }}</p>
+
+            </div>
+            <!-- <div style="display: flex; justify-content: center;">
+                <a class="more_btn" href="{% url 'available' coupon.id %}" data-toggle="modal" data-target="#exampleModalCenter4" style="color: white !important;">Buy
+                    Now</a></div> -->
+            <!-- <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="iq-pricing text-center">
+                        <div class="price-title iq-parallax iq-over-blue-80" data-jarallax='{"speed": 0.6}' style="background: url(images/bg/08.jpg);">
+                            <h2 style="font-size: 30px;" class="iq-font-white iq-tw-7" id="exampleModalLongTitle1">
+                                <b>Household Goods</b></h2>
+
+                        </div>
+                        <!-- <div class="modal-body">
+                            <p><br>Whether it be store furniture, appliances, crockery, sports
+                                equipment,
+                                toys, baby belongings, luggage sets etc. we ensure that your things are
+                                well-maintained. Safely transported and returned to you when you need
+                                them .<br>
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="more_btn" data-dismiss="modal" aria-label="Close">Close</button>
+                        </div> -->
+                    <!-- </div>
+                </div>
+            </div> -->
+        </div>
+      </div>
+          <!-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-store"></i></div>
+              <h4 class="title"><a href="">{{ coupon.company.name }}</a></h4>
+              <p class="description">{{ coupon.description }}</p>
+              <p class="description">{{ coupon.cost }}</p>
+              <p class="description" style="border-style: solid; border-width: thin; margin-top: 25px;"><a class="description" href = "{% url 'available' coupon.id %}">Buy</a></p>
+            </div>
+          </div> -->
+    {% endfor %}
+  </div>
+</section>
+{% endblock body %}
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+        {% for coupon in coupons %}
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-store"></i></div>
+              <h4 class="title"><a href="">{{ coupon.coupon.company.name }}</a></h4>
+              <p class="description">{{ coupon.unique_code }}</p>
+              <p class="description">{{ coupon.coupon.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+</body>
+</html> -->

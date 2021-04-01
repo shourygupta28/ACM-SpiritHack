@@ -1,0 +1,17 @@
+{% load crispy_forms_tags %} 
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<form method="POST">
+              {% csrf_token %}
+              {{ form|crispy }} <br>
+              <button class="btn btn-danger" type="submit" value="Post">Post</button>
+    </form>
+
+</body>
+</html>

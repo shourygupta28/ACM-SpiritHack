@@ -1,0 +1,113 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block head %}
+<meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Blog - Sailor Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'home/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'home/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'home/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'home/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'home/assets/css/style.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block body %}
+  
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <a href="#about-section" class="mouse smoothscroll">
+      <span class="mouse-icon">
+        <span class="mouse-wheel"></span>
+      </span>
+    </a>
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="carousel-item active" style="background-image: url(https://www.stoodnt.com/blog/wp-content/uploads/2020/02/1_t8sE0zYy7a3csAtqCeYULg.jpeg)">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animate__animated animate__fadeInDown"><span>Internship Portal</span></h2>
+  
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+  <main id="main">
+    <section id="blog" class="blog" style="align-self: center;margin-left: 350px;">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+          {% for internship in internships %}
+
+            <article class="entry">
+
+              <!-- <div class="entry-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div> -->
+
+              <h2 class="entry-title">
+                <a>{{ internship.project }}</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-building"></i> <a>{{ internship.field_of_project }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a>{{ internship.duration }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-geo-alt"></i> <a>{{ internship.location }}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-cash"></i> <a>{{ internship.stipend }}</a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                    {{ internship.about }}
+                </p>
+                <p><b>Perks: </b>{{ internship.perks }}</p>
+                <p><b>Skills Required: </b>{{ internship.skills_required }}</p>
+                <p><b>No of vacancies: </b>{{ internship.no_of_vaccancy }}</p>
+                <p><b>Last Date to Apply: </b>{{ internship.apply_by }}</p>
+      
+                <div class="read-more">
+                  <a href="{% url 'apply-for-internship' internship.id %}">Apply Now</a>
+                </div>
+              </div>
+
+            </article><!-- End blog entry -->
+          {% endfor %}
+
+          
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+{% endblock body %}

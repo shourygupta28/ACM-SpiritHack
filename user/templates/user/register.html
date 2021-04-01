@@ -1,0 +1,12 @@
+{% load crispy_forms_tags %}
+
+
+<form method="POST" id="register-form" class="register-form" style="min-width: 45%; color: black;">
+    {% csrf_token %}
+    {{form|crispy}}
+    
+
+    <input type="submit" value="Submit"  class="btn-get-started scrollto"  style="background-color: #e43c5c; border: none; outline: none;"> <br>
+    <small style="color: black;">Already have an account? <a href="{% url 'login' %}">Login</a> here</small>
+
+</form>
